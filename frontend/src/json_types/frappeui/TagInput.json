@@ -1,39 +1,15 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$ref": "#/definitions/SelectProps",
+  "$ref": "#/definitions/TagInputProps",
   "definitions": {
-    "SelectProps": {
+    "TagInputProps": {
       "type": "object",
       "properties": {
-        "options": {
-          "type": "array",
-          "items": {
-            "anyOf": [
-              {
-                "type": "string"
-              },
-              {
-                "type": "object",
-                "properties": {
-                  "label": {
-                    "type": "string"
-                  },
-                  "value": {
-                    "type": "string"
-                  },
-                  "icon": {},
-                  "disabled": {
-                    "type": "boolean"
-                  }
-                },
-                "required": [
-                  "label",
-                  "value"
-                ],
-                "additionalProperties": false
-              }
-            ]
-          }
+        "modelValue": {
+          "type": [
+            "string",
+            "null"
+          ]
         },
         "placeholder": {
           "type": "string"
@@ -41,10 +17,7 @@
         "disabled": {
           "type": "boolean"
         },
-        "multiple": {
-          "type": "boolean"
-        },
-        "getLabel": {
+        "renderIcon": {
           "type": "object",
           "properties": {
             "prototype": {},
@@ -65,9 +38,6 @@
           "additionalProperties": false
         }
       },
-      "required": [
-        "options"
-      ],
       "additionalProperties": false
     },
     "interface-1547037400-9888-11315-1547037400-0-217694": {
