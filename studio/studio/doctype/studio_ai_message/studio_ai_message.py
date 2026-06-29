@@ -1,9 +1,12 @@
 # Copyright (c) 2026, Frappe Technologies Pvt Ltd and contributors
 # For license information, please see license.txt
+
+from __future__ import annotations
+
 from frappe.model.document import Document
 
 
-class StudioAISession(Document):
+class StudioAIMessage(Document):
 	# begin: auto-generated types
 	# This code is auto-generated. Do not modify anything in this block.
 
@@ -12,13 +15,13 @@ class StudioAISession(Document):
 	if TYPE_CHECKING:
 		from frappe.types import DF
 
-		is_running: DF.Check
-		last_interaction_on: DF.Datetime | None
-		last_task_type: DF.Data | None
-		messages_json: DF.LongText | None
-		page: DF.Link
-		selected_model: DF.Data | None
-		status: DF.Literal["Active", "Archived"]
-		user: DF.Link
-
+		component_id: DF.Data | None
+		content: DF.LongText | None
+		message_type: DF.Literal["chat", "clarification", "status"]
+		metadata_json: DF.LongText | None
+		role: DF.Literal["user", "assistant"]
+		session: DF.Link
+		status: DF.Data | None
+		task_type: DF.Data | None
 	# end: auto-generated types
+	pass
