@@ -1,8 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$ref": "#/definitions/CheckboxProps",
   "definitions": {
-    "CheckboxProps": {
+    "LinkProps": {
       "type": "object",
       "properties": {
         "label": {
@@ -27,58 +26,55 @@
                 },
                 "stack": {
                   "type": "string"
-                },
-                "messages": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
                 }
               },
-              "additionalProperties": false,
               "required": [
-                "message",
-                "name"
-              ]
+                "name",
+                "message"
+              ],
+              "additionalProperties": false
             }
           ]
         },
         "required": {
           "type": "boolean"
         },
-        "id": {
+        "doctype": {
           "type": "string"
         },
-        "size": {
-          "type": "string",
-          "enum": [
-            "sm",
-            "md"
-          ]
+        "filters": {
+          "type": "object",
+          "additionalProperties": {}
+        },
+        "creatable": {
+          "type": "boolean"
+        },
+        "redirectable": {
+          "type": "boolean"
+        },
+        "editable": {
+          "type": "boolean"
         },
         "disabled": {
           "type": "boolean"
         },
-        "padding": {
-          "type": "boolean"
+        "placeholder": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "doctype"
+      ],
+      "additionalProperties": false
+    },
+    "LinkSlots": {
+      "type": "object",
+      "properties": {
+        "suffix": {
+          "type": "object"
         },
-        "modelValue": {
-          "anyOf": [
-            {
-              "type": "boolean"
-            },
-            {
-              "type": "number",
-              "const": 1
-            },
-            {
-              "type": "number",
-              "const": 0
-            }
-          ]
-        },
-        "indeterminate": {
-          "type": "boolean"
+        "item-create": {
+          "type": "object"
         }
       },
       "additionalProperties": false

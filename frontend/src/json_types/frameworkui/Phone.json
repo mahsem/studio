@@ -1,8 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$ref": "#/definitions/CheckboxProps",
   "definitions": {
-    "CheckboxProps": {
+    "PhoneProps": {
       "type": "object",
       "properties": {
         "label": {
@@ -27,58 +26,55 @@
                 },
                 "stack": {
                   "type": "string"
-                },
-                "messages": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
                 }
               },
-              "additionalProperties": false,
               "required": [
-                "message",
-                "name"
-              ]
+                "name",
+                "message"
+              ],
+              "additionalProperties": false
             }
           ]
         },
         "required": {
           "type": "boolean"
         },
-        "id": {
-          "type": "string"
-        },
         "size": {
           "type": "string",
           "enum": [
             "sm",
-            "md"
+            "md",
+            "lg",
+            "xl"
           ]
+        },
+        "variant": {
+          "type": "string",
+          "enum": [
+            "subtle",
+            "outline"
+          ]
+        },
+        "placeholder": {
+          "type": "string"
         },
         "disabled": {
           "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "PhoneSlots": {
+      "type": "object",
+      "properties": {
+        "label": {
+          "type": "object"
         },
-        "padding": {
-          "type": "boolean"
+        "description": {
+          "type": "object"
         },
-        "modelValue": {
-          "anyOf": [
-            {
-              "type": "boolean"
-            },
-            {
-              "type": "number",
-              "const": 1
-            },
-            {
-              "type": "number",
-              "const": 0
-            }
-          ]
-        },
-        "indeterminate": {
-          "type": "boolean"
+        "suffix": {
+          "type": "object"
         }
       },
       "additionalProperties": false
